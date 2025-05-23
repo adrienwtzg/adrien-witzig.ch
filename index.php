@@ -29,5 +29,8 @@ else if ($page == "payments") {
 else if ($page == "savings") {
     include 'views/savings.php';
 }
+else if ($page == "projects") {
+    include 'views/projects.php';
+}
 
 ?>
