@@ -1,14 +1,4 @@
-<?php
-if (isset($_SESSION["log"])) {
-  header('Location: index.php?page=projets');
-}
-//Message d'erreur de connexion
-if (isset($_SESSION['loginError']))
-{
-    echo $_SESSION['loginError'];
-    unset($_SESSION['loginError']);
-}
-?>
+
 <style>
   tr {
     line-height: 5px;
@@ -45,6 +35,41 @@ if (isset($_SESSION['loginError']))
     </div>
     
     <div class="container">
+      <table style="margin-bottom: 3%; border: 1px solid black;" id="tableAllocated" class="table table-hover table-bordered">
+          <tr style="background-color: white;">
+              <th style="text-align: center; width: 300px;">To allocate</th>
+              <th style="text-align: center; width: 100px;">Jan</th>
+              <th style="text-align: center; width: 100px;">Mar</th>
+              <th style="text-align: center; width: 100px;">Feb</th>
+              <th style="text-align: center; width: 100px;">Apr</th>
+              <th style="text-align: center; width: 100px;">May</th>
+              <th style="text-align: center; width: 100px;">Jun</th>
+              <th style="text-align: center; width: 100px;">Jul</th>
+              <th style="text-align: center; width: 100px;">Aug</th>
+              <th style="text-align: center; width: 100px;">Sep</th>
+              <th style="text-align: center; width: 100px;">Oct</th>
+              <th style="text-align: center; width: 100px;">Nov</th>
+              <th style="text-align: center; width: 100px;">Dec</th>
+              <th style="text-align: center; width: 100px;">2025</th>
+            </tr>
+            <tr>
+              <td>200</td>
+              <td>200</td>
+              <td>200</td>
+              <td>200</td>
+              <td>200</td>
+              <td>200</td>
+              <td>200</td>
+              <td>200</td>
+              <td>200</td>
+              <td>200</td>
+              <td>200</td>
+              <td>200</td>
+              <td>200</td>
+              <td>200</td>
+            </tr>
+      </table>
+      <br>
       <table style="margin-bottom: 3%;" id="tableIncome" class="table table-hover table-responsive">
           
       </table>
@@ -76,6 +101,7 @@ if (isset($_SESSION['loginError']))
               "<th style=\"color: white; text-align: center; width: 100px;\">Oct</th>"+
               "<th style=\"color: white; text-align: center; width: 100px;\">Nov</th>"+
               "<th style=\"color: white; text-align: center; width: 100px;\">Dec</th>"+
+              "<th style=\"color: white; text-align: center; width: 100px;\">"+$('#year').val()+"</th>"+
             "</tr>";
       }
 
@@ -127,6 +153,7 @@ if (isset($_SESSION['loginError']))
                     "<td class=\"text-center\"><input id=\""+item[0]+"i10\" onchange=\"changeBudget($('#year').val(), 10, "+item[0]+", '"+item[0]+"i10', "+item[0]+")\" type=\"text\" style=\"text-align: right;\" value=\""+item[12]+"\"></td>"+
                     "<td class=\"text-center\"><input id=\""+item[0]+"i11\" onchange=\"changeBudget($('#year').val(), 11, "+item[0]+", '"+item[0]+"i11', "+item[0]+")\" type=\"text\" style=\"text-align: right;\" value=\""+item[13]+"\"></td>"+
                     "<td class=\"text-center\"><input id=\""+item[0]+"i12\" onchange=\"changeBudget($('#year').val(), 12, "+item[0]+", '"+item[0]+"i12', "+item[0]+")\" type=\"text\" style=\"text-align: right;\" value=\""+item[14]+"\"></td>"+
+                    "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
                   "</tr>"
                 );
               }
@@ -146,6 +173,7 @@ if (isset($_SESSION['loginError']))
                     "<td class=\"text-center\"><input id=\""+item[0]+"e10\" onchange=\"changeBudget($('#year').val(), 10, "+item[0]+", '"+item[0]+"e10', "+item[0]+")\" type=\"text\" style=\"text-align: right;\" value=\""+item[12]+"\"></td>"+
                     "<td class=\"text-center\"><input id=\""+item[0]+"e11\" onchange=\"changeBudget($('#year').val(), 11, "+item[0]+", '"+item[0]+"e11', "+item[0]+")\" type=\"text\" style=\"text-align: right;\" value=\""+item[13]+"\"></td>"+
                     "<td class=\"text-center\"><input id=\""+item[0]+"e12\" onchange=\"changeBudget($('#year').val(), 12, "+item[0]+", '"+item[0]+"e12', "+item[0]+")\" type=\"text\" style=\"text-align: right;\" value=\""+item[14]+"\"></td>"+
+                    "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
                   "</tr>"
                 );
               }
@@ -165,12 +193,61 @@ if (isset($_SESSION['loginError']))
                     "<td class=\"text-center\"><input id=\""+item[0]+"s10\" onchange=\"changeBudget($('#year').val(), 10, "+item[0]+", '"+item[0]+"s10', "+item[0]+")\" type=\"text\" style=\"text-align: right;\" value=\""+item[12]+"\"></td>"+
                     "<td class=\"text-center\"><input id=\""+item[0]+"s11\" onchange=\"changeBudget($('#year').val(), 11, "+item[0]+", '"+item[0]+"s11', "+item[0]+")\" type=\"text\" style=\"text-align: right;\" value=\""+item[13]+"\"></td>"+
                     "<td class=\"text-center\"><input id=\""+item[0]+"s12\" onchange=\"changeBudget($('#year').val(), 12, "+item[0]+", '"+item[0]+"s12', "+item[0]+")\" type=\"text\" style=\"text-align: right;\" value=\""+item[14]+"\"></td>"+
+                    "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
                   "</tr>"
                 );
               }
               
           });
         }
+        $('#tableIncome').append(""+
+        "<tr>"+
+          "<td class=\"text-center\"><b >Total</b></td>"+
+          "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+          "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+          "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+          "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+          "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+          "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+          "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+          "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+          "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+          "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+          "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+          "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+        "</tr>");
+        $('#tableSavings').append(""+
+        "<tr>"+
+          "<td class=\"text-center\"><b >Total</b></td>"+
+          "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+          "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+          "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+          "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+          "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+          "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+          "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+          "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+          "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+          "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+          "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+          "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+        "</tr>");
+        $('#tableExpenses').append(""+
+        "<tr>"+
+          "<td class=\"text-center\"><b >Total</b></td>"+
+          "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+          "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+          "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+          "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+          "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+          "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+          "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+          "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+          "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+          "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+          "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+          "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+        "</tr>");
           },
           type: 'GET'
         });
