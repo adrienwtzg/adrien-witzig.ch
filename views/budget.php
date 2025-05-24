@@ -136,7 +136,11 @@
               
             }
             else {
-            clearData.forEach(function (item) {             
+            clearData.forEach(function (item) {   
+              //Total of rows
+              let sum = item[3] + item[4] + item[5] + item[6] + item[7] + item[8] + item[9] + item[10] + item[11] + item[12] + item[13] + item[14];
+              if(sum == ""){sum="-";}   
+
               if (item[2] == "Income") {
                 $('#tableIncome').append(""+
                   "<tr>"+
@@ -153,7 +157,7 @@
                     "<td class=\"text-center\"><input id=\""+item[0]+"i10\" onchange=\"changeBudget($('#year').val(), 10, "+item[0]+", '"+item[0]+"i10', "+item[0]+")\" type=\"text\" style=\"text-align: right;\" value=\""+item[12]+"\"></td>"+
                     "<td class=\"text-center\"><input id=\""+item[0]+"i11\" onchange=\"changeBudget($('#year').val(), 11, "+item[0]+", '"+item[0]+"i11', "+item[0]+")\" type=\"text\" style=\"text-align: right;\" value=\""+item[13]+"\"></td>"+
                     "<td class=\"text-center\"><input id=\""+item[0]+"i12\" onchange=\"changeBudget($('#year').val(), 12, "+item[0]+", '"+item[0]+"i12', "+item[0]+")\" type=\"text\" style=\"text-align: right;\" value=\""+item[14]+"\"></td>"+
-                    "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+                    "<td class=\"text-center\"><b style=\"float: right;\">"+sum+"</b></td>"+
                   "</tr>"
                 );
               }
@@ -173,7 +177,7 @@
                     "<td class=\"text-center\"><input id=\""+item[0]+"e10\" onchange=\"changeBudget($('#year').val(), 10, "+item[0]+", '"+item[0]+"e10', "+item[0]+")\" type=\"text\" style=\"text-align: right;\" value=\""+item[12]+"\"></td>"+
                     "<td class=\"text-center\"><input id=\""+item[0]+"e11\" onchange=\"changeBudget($('#year').val(), 11, "+item[0]+", '"+item[0]+"e11', "+item[0]+")\" type=\"text\" style=\"text-align: right;\" value=\""+item[13]+"\"></td>"+
                     "<td class=\"text-center\"><input id=\""+item[0]+"e12\" onchange=\"changeBudget($('#year').val(), 12, "+item[0]+", '"+item[0]+"e12', "+item[0]+")\" type=\"text\" style=\"text-align: right;\" value=\""+item[14]+"\"></td>"+
-                    "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+                    "<td class=\"text-center\"><b style=\"float: right;\">"+sum+"</b></td>"+
                   "</tr>"
                 );
               }
@@ -193,7 +197,7 @@
                     "<td class=\"text-center\"><input id=\""+item[0]+"s10\" onchange=\"changeBudget($('#year').val(), 10, "+item[0]+", '"+item[0]+"s10', "+item[0]+")\" type=\"text\" style=\"text-align: right;\" value=\""+item[12]+"\"></td>"+
                     "<td class=\"text-center\"><input id=\""+item[0]+"s11\" onchange=\"changeBudget($('#year').val(), 11, "+item[0]+", '"+item[0]+"s11', "+item[0]+")\" type=\"text\" style=\"text-align: right;\" value=\""+item[13]+"\"></td>"+
                     "<td class=\"text-center\"><input id=\""+item[0]+"s12\" onchange=\"changeBudget($('#year').val(), 12, "+item[0]+", '"+item[0]+"s12', "+item[0]+")\" type=\"text\" style=\"text-align: right;\" value=\""+item[14]+"\"></td>"+
-                    "<td class=\"text-center\"><b style=\"float: right;\">1000</b></td>"+
+                    "<td class=\"text-center\"><b style=\"float: right;\">"+sum+"</b></td>"+
                   "</tr>"
                 );
               }
