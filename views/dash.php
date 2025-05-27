@@ -1,43 +1,98 @@
-<?php
-
-include 'db/db_connect.php';
-
-/*$db = connectDB();
-
-$stmt = $db->prepare("INSERT INTO categories (name, type) VALUES (?, ?)");
-$cat="Loyer";
-$typ="Expenses";
-$stmt->bindParam(1, $cat);
-$stmt->bindParam(2, $typ);
-
-$stmt->execute();
-*/
-
-?>
     <div class="marge"></div>
-    <div class="container">
-      <div class="row justify-content-center">
-
-      <div class="col-md-6">
-        <form action="./model/checkLogin.php" method="POST" class="loginForm">
-          <h2 class="text-center title">Dashboardy</h2><br>
-          <div class="form-group">
-            <div class="row">
-              <div class="col">
-                <input type="text" class="form-control" placeholder="Prénom" name="prenom" required>
-              </div>
-              <div class="col">
-                <input type="text" class="form-control" placeholder="Nom" name="nom" required>
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <input type="password" class="form-control" placeholder="Mot de passe" name="motDePasse" required>
-          </div>
-          <button type="submit" class="btn btn-info btn-block">Se connecter</button><br>
-        </form>
-      </div>
+    
+    <div class="row" >
+      <div class="col-2"></div>
+        <div class="col-3">
+          <h2>Dashboard</h2>
+          <table class="table"  style="background-color: white; border-radius: 10px;">
+            <thead style="background-color: #00cc66; border-top-left-radius: 10px; border-top-right-radius: 10px;  color: white;">
+              <th class="col-3">Income</th>
+              <th class="col-1" style="text-align: center;">Tracked</th>
+              <th class="col-1" style="text-align: center;">Budget</th>
+              <th class="col-3" style="text-align: center;">Compl.</th>
+              <th class="col-1" style="text-align: center;">Remaining</th>
+              <th class="col-1" style="text-align: center;">Excess</th>
+            </thead>
+            <tbody class="table-group-divider table-divider-color">
+              <tr>
+                <th scope="row">Salaire (net)</th>
+                <td><span style="float: right;">1000</span></td>
+                <td><span style="float: right;">2000</span></td>
+                <td>
+                  <div class="progress" style="height: 1.5rem; margin-right: 1rem; margin-left: 2rem;">
+                    <div class="progress-bar" role="progressbar" style="width: 75%; background-color: #00cc66;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                  </div>
+                </td>
+                <td><span style="float: right;">500</span></td>
+                <td><span style="float: right;">120</span></td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+        <div class="col-6"></div>
     </div>
+    <div class="row" >
+      <div class="col-2"></div>
+        <div class="col-3">
+          <table class="table"  style="background-color: white; border-radius: 10px;">
+            <thead style="background-color: #ff0066; border-top-left-radius: 10px; border-top-right-radius: 10px;  color: white;">
+              <th class="col-3">Expenses</th>
+              <th class="col-1" style="text-align: center;">Tracked</th>
+              <th class="col-1" style="text-align: center;">Budget</th>
+              <th class="col-3" style="text-align: center;">Compl.</th>
+              <th class="col-1" style="text-align: center;">Remaining</th>
+              <th class="col-1" style="text-align: center;">Excess</th>
+            </thead>
+            <tbody class="table-group-divider table-divider-color">
+              <tr>
+                <th scope="row">Salaire (net)</th>
+                <td><span style="float: right;">1000</span></td>
+                <td><span style="float: right;">2000</span></td>
+                <td>
+                  <div class="progress" style="height: 1.5rem; margin-right: 1rem; margin-left: 2rem;">
+                    <div class="progress-bar" role="progressbar" style="width: 75%; background-color: #ff0066;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                  </div>
+                </td>
+                <td><span style="float: right;">500</span></td>
+                <td><span style="float: right;">120</span></td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+        <div class="col-6"></div>
     </div>
+    <div class="row" >
+      <div class="col-2"></div>
+        <div class="col-3">
+          <table class="table"  style="background-color: white; border-radius: 10px;">
+            <thead style="background-color: #0070c0; border-top-left-radius: 10px; border-top-right-radius: 10px;  color: white;">
+              <th class="col-3">Savings</th>
+              <th class="col-1" style="text-align: center;">Tracked</th>
+              <th class="col-1" style="text-align: center;">Budget</th>
+              <th class="col-3" style="text-align: center;">Compl.</th>
+              <th class="col-1" style="text-align: center;">Remaining</th>
+              <th class="col-1" style="text-align: center;">Excess</th>
+            </thead>
+            <tbody class="table-group-divider table-divider-color">
+              <tr>
+                <th scope="row">Salaire (net)</th>
+                <td><span style="float: right;">1000</span></td>
+                <td><span style="float: right;">2000</span></td>
+                <td>
+                  <div class="progress" style="height: 1.5rem; margin-right: 1rem; margin-left: 2rem;">
+                    <div class="progress-bar" role="progressbar" style="width: 75%; background-color: #0070c0;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                  </div>
+                </td>
+                <td><span style="float: right;">500</span></td>
+                <td><span style="float: right;">120</span></td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+        <div class="col-6"></div>
+    </div>  
   </body>
 </html>
