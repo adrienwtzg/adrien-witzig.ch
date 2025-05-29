@@ -1,8 +1,8 @@
     <div class="marge"></div>
     
     <div class="row" >
-      <div class="col-2"></div>
-        <div class="col-3">
+      <div class="col-1"></div>
+        <div class="col-5">
           <h2>Dashboard</h2>
           <table class="table"  style="background-color: white; border-radius: 10px;">
             <thead style="background-color: #00cc66; border-top-left-radius: 10px; border-top-right-radius: 10px;  color: white;">
@@ -33,8 +33,8 @@
         <div class="col-6"></div>
     </div>
     <div class="row" >
-      <div class="col-2"></div>
-        <div class="col-3">
+      <div class="col-1"></div>
+        <div class="col-5">
           <table class="table"  style="background-color: white; border-radius: 10px;">
             <thead style="background-color: #ff0066; border-top-left-radius: 10px; border-top-right-radius: 10px;  color: white;">
               <th class="col-3">Expenses</th>
@@ -64,8 +64,8 @@
         <div class="col-6"></div>
     </div>
     <div class="row" >
-      <div class="col-2"></div>
-        <div class="col-3">
+      <div class="col-1"></div>
+        <div class="col-5">
           <table class="table"  style="background-color: white; border-radius: 10px;">
             <thead style="background-color: #0070c0; border-top-left-radius: 10px; border-top-right-radius: 10px;  color: white;">
               <th class="col-3">Savings</th>
@@ -88,11 +88,23 @@
                 <td><span style="float: right;">500</span></td>
                 <td><span style="float: right;">120</span></td>
               </tr>
-              
+              <tr style="border-top: solid;">
+                <th scope="row">Total</th>
+                <th><span style="float: right;">1000</span></th>
+                <th><span style="float: right;">2000</span></th>
+                <th>
+                  <div class="progress" style="height: 1.5rem; margin-right: 1rem; margin-left: 2rem;">
+                    <div class="progress-bar" role="progressbar" style="width: 75%; background-color: #0070c0;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                  </div>
+                </th>
+                <th><span style="float: right;">500</span></th>
+                <th><span style="float: right;">120</span></th>
+              </tr>
             </tbody>
           </table>
         </div>
         <div class="col-6"></div>
-    </div>  
+    </div>
+    
   </body>
 </html>

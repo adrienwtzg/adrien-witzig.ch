@@ -21,7 +21,6 @@
         <li class="pages"><a href="index.php?page=trans">Transactions</a></li>
         <li class="pages"><a href="index.php?page=payments">Payments</a></li>
         <li class="pages"><a href="index.php?page=savings">Savings</a></li>
-        <li class="pages"><a href="index.php?page=savings">Savings</a></li>
         <li class="pages"><a href="index.php?page=projects">Projects</a></li>
         <li class="pages"><a href="index.php?page=settings">Settings</a></li>
       </ul>
